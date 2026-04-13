@@ -10,3 +10,18 @@ int removeElement(vector<int>& nums, int val) {
     }
     return k;
     }
+
+int removeDuplicates(vector<int>& nums) {
+        int n = nums.size();
+        int k = 1;
+        int p = 1;
+        while(p<n){
+            while(p<n && nums[p]==nums[p-1]){
+                p++;
+            }
+            if(p==n) break;
+            nums[k++]=nums[p];
+            p++;
+        }
+        return k;
+    }
