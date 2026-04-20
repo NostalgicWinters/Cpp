@@ -26,7 +26,7 @@ int removeDuplicates(vector<int>& nums) {
         return k;
     }
 
-int removeDuplicates(vector<int>& nums) {
+int removeDuplicates2(vector<int>& nums) {
         int n = nums.size();
         if(n == 0 || n==1|| n==2) return n;
         map<int,int> hash;
@@ -38,5 +38,20 @@ int removeDuplicates(vector<int>& nums) {
                 k++;
             }
         }
-        return k;
+    }
+
+int maxProfit(vector<int>& prices) {
+        int minPrice = INT_MAX;
+        int maxProfit = 0;
+
+        for (int price : prices) {
+            if (price < minPrice) {
+                minPrice = price;
+            } else {
+                int profit = price - minPrice;
+                maxProfit = max(maxProfit, profit);
+            }
+        }
+
+        return maxProfit;
     }

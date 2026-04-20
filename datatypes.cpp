@@ -12,6 +12,6 @@ int main()
     double z = 3.9982;
     cout << x+a << '\n';
     cout << a+t << '\n';
-    cout << str+x;
+    // cout << str+x; --> error
     return 0;
 }
