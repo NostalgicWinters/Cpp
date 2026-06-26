@@ -77,7 +77,47 @@ int main() {
 
   Deque<int> dq;
 
+  //[---------------------------------------------------------]
+  //[ Stack--> LIFO Last In First Out                         ]
+  //[---------------------------------------------------------]
 
+  stack<int> st;
+  st.push(1); // {1}
+  st.push(2); // {2, 1}
+  st.push(3); // {3, 2, 1}
+  st.push(3); // {3, 3, 2, 1}
+  st.emplace(5); // {5, 3, 3, 2, 1}
+
+  cout << st.top() << endl; // prints 5
+  // st[2] is not valid
+
+  st.pop(); // st becomes {3, 3, 2, 1}
+  
+  cout << st.size() << endl; // prints number of elements in the stack
+
+  cout << st.empty(); // prints if the stack is empty or not
+  
+  stack<int> st1, st2;
+  st1.swap(st2); // Swaps st1 and st2
+  
+  //[---------------------------------------------------------]
+  //[ Queue--> FIFO First In First Out                        ]
+  //[---------------------------------------------------------]
+
+  queue<int> q;
+  q.push(1); // {1}
+  q.push(2); // {1, 2}
+  q.emplace(4); // {1, 2, 4}
+
+  q.back() +=5; // {1, 2, 9}
+                
+  cout << q.front() << endl; // returns 1 
+  
+  q.pop(); // {2, 9}
+
+  cout << q.front(); // prints 2 
+  
+  // size swap and empty are same as stack
 
   return 0;
 }
