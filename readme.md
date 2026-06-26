@@ -28,12 +28,13 @@ This repository is not meant to be a complete course or a polished library. It s
 ## Repository Structure
 
 > The structure may evolve as I continue learning and organizing new topics.
+```
 ├── DSA/
 │   └── 150leetcode.cpp
 ├── stl/
 │   └── tut.cpp
 └── .gitignore
-
+```
 
 ## Topics Covered
 
