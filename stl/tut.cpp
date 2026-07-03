@@ -118,6 +118,79 @@ int main() {
   cout << q.front(); // prints 2 
   
   // size swap and empty are same as stack
+  
+  //[---------------------------------------------------------]
+  //[ Priority--> lexicographically Largest element at the top]
+  //[---------------------------------------------------------]
+ 
+  priority_queue<int> pq;
+  // Data is not stored in linear fashion
+  pq.push(5);  // {5}
+  pq.push(2);  // {5,2}
+  pq.push(8);  // {8,5,2}
+  pq.push(10); // {10,8,5,2}
+
+  pq.pop(); // {8,5,2}
+
+  cout << pq.top();
+
+  //Minimum heap
+  
+  priority_queue<int, vector<int>, greater<int>> pq;
+
+  pq.push(5);
+  pq.emplace(2);
+  pq.emplace(10);
+
+  cout << pq.top(); // prints 2 
+
+  // size swap and empty are same as stack
+
+  //[---------------------------------------------------------]
+  //[ Set--> stores unique values in sorted order             ]
+  //[---------------------------------------------------------]
+
+  set<int> st;
+  // push doesn't work here
+  st.insert(1);   // {1}
+  st.emplace(2);   // {1,2}
+  st.insert(2);   // {1,2}
+  st.insert(4);   // {1,2,4}
+  st.insert(3);   //app/
+
+  // begin, end, rend, rbegin, size are same
+  // empty() and swap() are the same
+
+  st.erase(3); // loagrithmic time 
+  // deletion by iterator --> constant time
+  cout << st.lower_bound();
+  cout << st.upper_bound();
+
+  //[---------------------------------------------------------]
+  //[ multiset--> stores multiple values in sorted order      ]
+  //[---------------------------------------------------------]
+  
+  multiset<int> ms;
+  ms.insert(1);
+  ms.insert(1);
+  ms.insert(1); // {1,1,1}
+
+  ms.erase(1); // all 1 erased
+
+  //[---------------------------------------------------------]
+  //[ Unordered set--> stores multiple values randomized      ]
+  //[---------------------------------------------------------]
+  // except colliosion it has a better time complexity than set
+
+  //[---------------------------------------------------------]
+  //[ map--> stores multiple key, value pairs sorted by keys  ]
+  //[---------------------------------------------------------]
+
+  map<int, int> mpp;
+  // keys are unique
+  mpp[1] = 2;
+  mpp.emplace({3,1});
+
 
   return 0;
 }
